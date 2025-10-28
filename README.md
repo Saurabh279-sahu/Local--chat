@@ -31,7 +31,7 @@ chat_app/
    ```bash
    pkg update && pkg upgrade
    pkg install python
-
+   ```
 2. Install Flask
 ```bash
 pip install flask
@@ -44,14 +44,15 @@ Copy your chat_app folder to:
 ```
 
 4. Start the server
-```
+```bash
 cd ~/chat_app
 python chat_server.py
 ```
 
 5. Note the IP address shown, for example:
-
-``` Running on http://192.168.43.161:5000```
+```bash
+Running on http://192.168.43.161:5000
+```
 
 
 6. Open the link
@@ -69,20 +70,22 @@ On another device: connect it to the same hotspot/Wi-Fi and open the same IP in 
 💻 Installation on Kali Linux
 
 1. Install dependencies
-```
+```bash
 sudo apt update
 sudo apt install python3 python3-pip
 pip install flask
 ```
 
 2. Navigate to your project folder
-
-```cd ~/chat_app```
+```bash
+cd ~/chat_app
+```
 
 
 3. Run the server
-
-```python3 chat_server.py```
+```bash
+python3 chat_server.py
+```
 
 
 4. Access the app
