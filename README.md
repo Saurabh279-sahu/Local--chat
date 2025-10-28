@@ -22,7 +22,7 @@ chat_app/
 └── templates/
     ├── index.html
     └── login.html
-    
+
 ---
 
 ## ⚙️ Installation on Termux
@@ -33,25 +33,25 @@ chat_app/
    pkg install python
 
 2. Install Flask
-``
+```bash
 pip install flask
-``
+```
 
 3. Move your project folder
 Copy your chat_app folder to:
-``
+```bash
 /data/data/com.termux/files/home/
-``
+```
 
 4. Start the server
-``
+```
 cd ~/chat_app
 python chat_server.py
-``
+```
 
 5. Note the IP address shown, for example:
 
-*`` Running on http://192.168.43.161:5000``
+``` Running on http://192.168.43.161:5000```
 
 
 6. Open the link
@@ -69,20 +69,20 @@ On another device: connect it to the same hotspot/Wi-Fi and open the same IP in 
 💻 Installation on Kali Linux
 
 1. Install dependencies
-``
+```
 sudo apt update
 sudo apt install python3 python3-pip
 pip install flask
-``
+```
 
 2. Navigate to your project folder
 
-``cd ~/chat_app``
+```cd ~/chat_app```
 
 
 3. Run the server
 
-``python3 chat_server.py``
+```python3 chat_server.py```
 
 
 4. Access the app
