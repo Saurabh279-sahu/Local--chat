@@ -1,141 +1,130 @@
-💬 Flask Local Chat App
+💬 Local Chat app (Flask)
 
-A simple local network chat application built using Flask (Python).
-It allows two users on the same Wi-Fi or hotspot to chat with each other through their browsers — no internet or database needed.
-
-
----
-
-⚙️ Features
-
-Simple two-user chat
-
-Messages auto-saved locally in JSON
-
-Works on both Termux (Android) and Kali Linux / Ubuntu
-
-Clean and responsive chat interface
-
-Manual refresh for new messages
-
-
+A simple **local chat application** built with Python and Flask that allows two or more users to chat on the same Wi-Fi or hotspot network.  
+No external server or internet connection required — just connect devices to the same network and start chatting locally.
 
 ---
 
-🧰 Folder Structure
-
-chat_app/
-│
-├── chat_server.py        # Main Flask app
-│
-└── templates/
-    ├── index.html        # Chat page UI
-    └── login.html        # Username entry page
-
+## 🚀 Features
+- Works on both **Termux** and **Kali Linux**
+- Chat between multiple devices on the same Wi-Fi or hotspot
+- Clean and simple user interface
+- Separate sender and receiver message bubbles (like WhatsApp)
+- No database required — runs directly on Flask
 
 ---
 
-📲 Setup on Termux (Android)
+## 📁 Folder Structure
 
-1. Install Python and Flask
+chat_app/ │ ├── chat_server.py │ └── templates/ ├── index.html └── login.html
 
-pkg update && pkg upgrade -y
-pkg install python -y
+---
+
+## ⚙️ Installation on Termux
+
+1. **Update and install Python**
+   ```bash
+   pkg update && pkg upgrade
+   pkg install python
+
+2. Install Flask
+
 pip install flask
 
-2. Move your project folder to Termux
 
-mv /sdcard/chat_app /data/data/com.termux/files/home/
+3. Move your project folder
+Copy your chat_app folder to:
+
+/data/data/com.termux/files/home/
+
+
+4. Start the server
+
 cd ~/chat_app
-
-3. Run the chat server
-
 python chat_server.py
 
-You’ll see something like:
 
-* Running on http://0.0.0.0:5000
+5. Note the IP address shown, for example:
 
-4. Open on the same phone
+* Running on http://192.168.43.161:5000
 
-Open your browser and go to:
 
-http://127.0.0.1:5000
+6. Open the link
 
-5. Open on another phone (same Wi-Fi)
+On your own phone: open the given IP in Chrome or any browser
 
-Find your Termux IP:
+On another device: connect it to the same hotspot/Wi-Fi and open the same IP in browser
 
-ifconfig
 
-Example:
 
-inet 192.168.43.161
-
-Then open on the other phone:
-
-http://192.168.43.161:5000
-
-Now both phones can chat with each other.
 
 
 ---
 
-💻 Setup on Kali Linux / Ubuntu
+💻 Installation on Kali Linux
 
-1. Install Flask
+1. Install dependencies
 
 sudo apt update
-sudo apt install python3-pip -y
-pip3 install flask
+sudo apt install python3 python3-pip
+pip install flask
 
-2. Run the app
 
-cd chat_app
+2. Navigate to your project folder
+
+cd ~/chat_app
+
+
+3. Run the server
+
 python3 chat_server.py
 
-3. Open in browser
 
-http://127.0.0.1:5000
+4. Access the app
+Open the displayed local IP address in any browser (on same network).
 
-For LAN chat:
 
-http://<your-system-ip>:5000
 
 
 ---
 
 🧠 How It Works
 
-1. chat_server.py runs a local Flask web server.
+Flask runs a local web server on port 5000
 
+Devices connected to the same network can open the chat in their browser
 
-2. When you log in from login.html, your username is saved.
-
-
-3. index.html displays chat messages, which are saved in a local JSON file.
-
-
-4. When one user sends a message, the other can see it by refreshing their page.
-
+Messages are exchanged through Flask routes and stored temporarily in memory (RAM)
 
 
 
 ---
 
-🔒 Notes
+🧩 Troubleshooting
 
-Works only in local networks (no internet).
+If “This site can’t be reached” appears:
+Make sure both devices are connected to the same hotspot/Wi-Fi
 
-To stop, press CTRL + C in the terminal.
+If Send button is disabled:
+Refresh the page after entering your name in login
 
-You can customize HTML/CSS to match your theme.
+Use Chrome or Firefox for best performance
 
 
 
 ---
 
-🧾 License
+👨‍💻 Author
 
-This project is open-source.
-You can use or modify it for learning or development purposes.
+Saurabh Sahu
+📍 Created for local network chatting using Flask & Python.
+🖥️ Works on mobile, PC, and Kali Linux.
+
+
+---
+
+📜 License
+
+This project is open-source and free to use for learning purposes.
+
+
