@@ -22,7 +22,43 @@ chat_app/
 └── templates/
     ├── index.html
     └── login.html
+    
 
+---
+
+🪟 Windows Setup
+
+1. Download & install Python:
+👉 https://www.python.org/downloads/
+(Make sure “Add Python to PATH” is checked)
+
+
+2. Open Command Prompt and install Flask:
+```bash
+pip install flask
+```
+
+3. Go to project directory:
+```
+cd C:\Users\<yourname>\Documents\chat_app
+```
+
+4. Run the app:
+```bash
+python chat_server.py
+```
+
+5. Allow Firewall access when prompted.
+
+
+6. Visit in your browser:
+```
+http://127.0.0.1:5000
+```
+or (for other devices on same network)
+```
+http://<your-local-ip>:5000
+```
 ---
 
 ## ⚙️ Installation on Termux
@@ -39,18 +75,18 @@ pip install flask
 
 3. Move your project folder
 Copy your chat_app folder to:
-```bash
+```
 /data/data/com.termux/files/home/
 ```
 
 4. Start the server
-```bash
+```
 cd ~/chat_app
 python chat_server.py
 ```
 
 5. Note the IP address shown, for example:
-```bash
+```
 Running on http://192.168.43.161:5000
 ```
 
@@ -77,7 +113,7 @@ pip install flask
 ```
 
 2. Navigate to your project folder
-```bash
+```
 cd ~/chat_app
 ```
 
