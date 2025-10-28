@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Local Chat</title>
+    <style>
+        body { font-family: Arial; background: #e8f0fe; padding: 20px; }
+        .chat-box { max-width: 600px; margin: auto; background: white; border-radius: 10px; padding: 10px; box-shadow: 0 0 5px gray; }
+        .message { padding: 10px; margin: 5px; border-radius: 10px; max-width: 70%; }
+        .you { background: #d0e7ff; margin-left: auto; text-align: right; }
+        .other { background: #d4f8d4; margin-right: auto; text-align: left; }
+        .msg-input { display: flex; margin-top: 10px; }
+        input[type=text] { flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 10px; }
+        button { margin-left: 5px; padding: 10px; border: none; border-radius: 10px; background: #007bff; color: white; }
+        .header { display: flex; justify-content: space-between; align-items: center; }
+    </style>
+</head>
+<body>
+    <div class="chat-box">
+        <div class="header">
+            <h2>Chat - {{ username }}</h2>
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </div>
+        <div id="messages">
+            {% for msg in messages %}
+                <div class="message {% if msg.user == username %}you{% else %}other{% endif %}">
+                    <b>{{ msg.user }}</b>: {{ msg.text }} <br>
+                    <small>{{ msg.time }}</small>
+                </div>
+            {% endfor %}
+        </div>
+        <form method="POST" class="msg-input">
+            <input type="text" name="message" placeholder="Type message..." autocomplete="off" required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+</body>
+</html>
